@@ -30,8 +30,8 @@ const formSchema = z.object({
 });
 
 const languages = [
-  { code: "en", name: "Anglais" },
-  { code: "fr", name: "Français" },
+  { code: "EN-US", name: "Anglais" },
+  { code: "FR", name: "Français" },
 ];
 
 export default function Translator() {
@@ -58,7 +58,6 @@ export default function Translator() {
         }
       );
       const data = await response.json();
-      console.log(data);
       setLoading(false);
       form.reset();
       toast.success("La traduction a été effectuée avec succès.");
