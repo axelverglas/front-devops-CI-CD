@@ -32,6 +32,9 @@ const formSchema = z.object({
 const languages = [
   { code: "EN-US", name: "Anglais" },
   { code: "FR", name: "Français" },
+  { code: "ES", name: "Espagnol" },
+  { code: "DE", name: "Allemand" },
+  { code: "ZH", name: "Chinois" },
 ];
 
 export default function Translator() {
@@ -40,6 +43,7 @@ export default function Translator() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      lang: "",
       url: "",
     },
   });
